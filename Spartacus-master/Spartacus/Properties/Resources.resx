@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExportFunctionDefinitionsINI.java" xml:space="preserve">
+    <value>/*
+ *  This file has been created by using the existing Ghidra ExportFunctionInfoScript.java script as a guide.
+ *  One would ask "Why don't you save this output as JSON? Wouldn't that be easier?" And the answer is "yes, it would be",
+ *  however I want to keep Spartacus a standalone executable, and adding a NuGet package for JSON would break that.
+ */
+
+import java.util.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.charset.Charset;
+
+import ghidra.app.script.GhidraScript;
+import ghidra.program.model.listing.*;
+import ghidra.program.model.data.*;
+
+public class ExportFunctionDefinitionsINI extends GhidraScript {
+
+	@Override
+	public void run() throws Exception {
+
+		//String iniData = "";
+        List&lt;String&gt; iniData = new ArrayList&lt;String&gt;();
+        Listing listing = currentProgram.getListing();
+        FunctionIterator iter = listing.getFunctions(true);
+        while (iter.hasNext() &amp;&amp; !monitor.isCancelled()) {
+            Function f = iter.next();
+            
+            iniData.add("[" + f.getName() + "]");
+            iniData.add("return=" + f.getReturnType().getName());
+            iniData.add("signature=" + f.getSignature().getPrototypeString());
+            
+            ParameterDefinition[] functionParameters = f.getSignature().getArguments();
+            for (int i = 0; i &lt; functionParameters.length; i++) {
+                iniData.add("parameters[" + functionParameters[i].getOrdinal() + "]=" + functionParameters[i].getName() + "|" + functionParameters[i].getDataType().getName());
+            }
+        }
+        
+        Files.write(Paths.get("%EXPORT_TO%"), iniData, Charset.defaultCharset());
+	}
+}</value>
+  </data>
+  <data name="help\com.txt" xml:space="preserve">
+    <value>Usage: Spartacus.exe --mode com [--help] [OPTIONS]
+
+--procmon               Location (file) of the SysInternals Process Monitor procmon.exe or procmon64.exe
+--pml                   Location (file) to store the ProcMon event log file. If the file exists,
+                        it will be overwritten. When used with --existing it will indicate
+                        the event log file to read from and will not be overwritten.
+--pmc                   Define a custom ProcMon (PMC) file to use. This file will not be modified
+                        and will be used as is.
+--csv                   Location (file) to store the CSV output of the execution.
+--existing              Switch to indicate that Spartacus should process an existing ProcMon event
+                        log file (PML). To indicate the event log file use --pml, useful when you
+                        have been running ProcMon for hours or used it in Boot Logging.
+--acl                   Enumerate local system for missing/misconfigured COM libraries and executables.
+
+Examples:
+
+Collect all events and save them into C:\Data\logs.pml. All vulnerable COM information will be saved as C:\Data\VulnerableCOM.csv.
+
+    --mode com --procmon C:\SysInternals\Procmon.exe --pml C:\Data\logs.pml --csv C:\Data\VulnerableCOM.csv --verbose
+
+Process an existing PML file to identify vulnerable COM entries.
+
+    --mode com --existing --pml C:\Data\logs.pml --csv C:\Data\VulnerableCOM.csv --verbose
+
+Enumerate the local system registry to identify missing/misconfigured COM libraries and executables.
+
+    --mode com --acl --csv C:\Data\VulnerableCOM.csv --verbose</value>
+  </data>
+  <data name="help\detect.txt" xml:space="preserve">
+    <value>Usage: Spartacus.exe --mode detect [--help]
+
+This mode does not support any additional options.</value>
+  </data>
+  <data name="help\dll.txt" xml:space="preserve">
+    <value>Usage: Spartacus.exe --mode dll [--help] [OPTIONS]
+
+--procmon               Location (file) of the SysInternals Process Monitor procmon.exe or procmon64.exe
+--pml                   Location (file) to store the ProcMon event log file. If the file exists,
+                        it will be overwritten. When used with --existing it will indicate
+                        the event log file to read from and will not be overwritten.
+--pmc                   Define a custom ProcMon (PMC) file to use. This file will not be modified
+                        and will be used as is.
+--csv                   Location (file) to store the CSV output of the execution.
+--solution              Path to the directory where the solutions for the proxy DLLs will be stored.
+--existing              Switch to indicate that Spartacus should process an existing ProcMon event
+                        log file (PML). To indicate the event log file use --pml, useful when you
+                        have been running ProcMon for hours or used it in Boot Logging.
+--all                   By default any DLLs in the Windows or Program Files directories will be skipped.
+                        Use this to include those directories in the output.
+
+Examples:
+
+Collect all events and save them into C:\Data\logs.pml. All vulnerable DLLs will be saved as C:\Data\VulnerableDLLFiles.csv and all proxy DLLs solutions in C:\Data\Solutions.
+
+    --mode dll --procmon C:\SysInternals\Procmon.exe --pml C:\Data\logs.pml --csv C:\Data\VulnerableDLLFiles.csv --solution C:\Data\Solutions --verbose
+
+Parse an existing PML event log output, save output to CSV, and generate proxy DLLs.
+
+    --mode dll --existing --pml C:\MyData\SomeBackup.pml --csv C:\Data\VulnerableDLLFiles.csv --solution C:\Data\Solutions --verbose</value>
+  </data>
+  <data name="help\main.txt" xml:space="preserve">
+    <value>Usage: Spartacus.exe --mode [dll|proxy|com|detect|sign] [--help] [OPTIONS]
+
+Supported Modes
+---------------
+
+dll                     Identify DLL hijacking vulnerabilities.
+proxy                   Generate Visual Studio solutions for DLL proxy files.
+com                     Identify COM hijacking vulnerabilities.
+detect                  Identify DLLs that are proxying calls (like 'DLL Hijacking in progress').
+                        This isn't a feature to be relied upon, it's there to get the low hanging fruit.
+sign                    Generate self-signed certificates and use them to sign executables/DLLs.
+
+Global Options
+--------------
+
+--verbose               Enable verbose output.
+--debug                 Enable debug output.
+--external-resources    Use assets in the ./Assets folder instead of using internal resources.</value>
+  </data>
+  <data name="help\proxy.txt" xml:space="preserve">
+    <value>Usage: Spartacus.exe --mode proxy [--help] [OPTIONS]
+
+--ghidra                Path to Ghidra's 'analyzeHeadless.bat' file.
+--dll                   Path to the DLL you want to proxy, and can include multiple instances of this argument.
+--solution              Path to the directory where the solution of the proxy will be stored.
+--overwrite             If the --solution path already exists, use this flag to overwrite it.
+--only                  Generate proxy functions only for functions defined in this variable.
+                        Values are comma separated like 'WTSFreeMemory,WTSFreeMemoryExA,WTSSetUserConfigA'
+--action [ACTION]       Default action is to generate a VS solution.
+                        --action prototypes, takes as input a Windows SDK folder and parses *.h files in order
+                        to generate a database of function prototypes.
+--path [PATH]           Currently only works with "--action prototypes" and is the location of a Windows SDK
+                        directory.
+--prototypes [PATH]     Location of prototypes.csv (currently within the ./Assets folder).
+
+Examples:
+
+Create proxies for as many functions as possible (based on Ghidra's output).
+
+    --mode proxy --ghidra C:\ghidra\support\analyzeHeadless.bat --dll C:\Windows\System32\userenv.dll --solution C:\Projects\spartacus-userenv --overwrite --verbose
+
+Same as above, but use external asset files to generate the solution (if you need to modify them).
+
+    --mode proxy --ghidra C:\ghidra\support\analyzeHeadless.bat --dll C:\Windows\System32\userenv.dll --solution C:\Projects\spartacus-userenv --overwrite --verbose --external-resources
+    
+Utilise pre-generated function prototypes for functions which Ghidra was unable to extract function definitions for.
+
+    --mode proxy --ghidra C:\ghidra\support\analyzeHeadless.bat --dll C:\Windows\System32\userenv.dll --solution C:\Projects\spartacus-userenv --overwrite --verbose --external-resources --prototypes C:\data\prototypes.csv
+    
+Generate proxies only for functions GetFileVersionInfoExW and GetFileVersionInfoExA.
+
+    --mode proxy --ghidra C:\ghidra\support\analyzeHeadless.bat --dll C:\Windows\System32\version.dll --solution C:\Projects\spartacus-version --verbose --overwrite --external-resources --only "GetFileVersionInfoExW, GetFileVersionInfoExA"
+    
+Generate a solution that redirects all exports (no function proxying).
+
+    --mode proxy --dll C:\Windows\System32\version.dll --solution "C:\data\tmp\refactor-version" --overwrite --verbose --external-resources
+    
+It is possible to input multiple DLLs at once.
+
+    --mode proxy --dll C:\Windows\System32\version.dll --dll C:\Windows\System32\userenv.dll --solution "C:\data\tmp\dll-collection" --overwrite --verbose --external-resources
+    
+Generate a function prototype database from existing *.h files, assisting in generating proxy functions for ones that Ghidra was not able to extract its function definition.
+
+    --mode proxy --action prototypes --path "C:\Program Files (x86)\Windows Kits" --csv C:\data\prototypes.csv --verbose</value>
+  </data>
+  <data name="help\sign.txt" xml:space="preserve">
+    <value>Usage: Spartacus.exe --mode sign [--help] [OPTIONS]
+
+--action [ACTION]       Specify the action to be executed:
+                            generate: Generate a self-signed certificate (pfx).
+                            sign: Sign an executable using a pfx file.
+--subject               Specify the subject for the new certificate (CN=Spartacus,C=GB, etc).
+--issuer                Specify the issuer for the new certificate (CN=Spartacus Issuer,C=GB, etc).
+--copy-from             Specify a signed file to copy the Subject/Issuer from.
+--not-before            Date from when the new certificate will be valid from, format is YYYY-MM-DD HH:MM:SS.
+--not-after             Expiration date for the new certificate, format is YYYY-MM-DD HH:MM:SS.
+--pfx                   When used with '--action generate' this is where the pfx file will be saved as.
+                        When used with '--action sign' this is where the pfx file will be loaded from.
+--overwrite             When used with '--action generate' this will indicate whether to rewrite the target
+                        file if it already exists.
+--password              Password for the pfx file (either to save or load, depending on the --action)
+--path [FILE]           Location of the executable/DLL file to be signed.
+--algorithm             When used with '--action sign', this argument will specify the signature algorithm.
+                        This can be one of: MD5, SHA1, SHA256, SHA384, SHA512.
+--timestamp             When used with '--action sign', this is where the Timestamp Server is specified.
+                        For example 'http://timestamp.sectigo.com' or 'http://timestamp.digicert.com'.</value>
+  </data>
+  <data name="solution\dllmain.cpp" xml:space="preserve">
+    <value>#pragma once
+
+%_PRAGMA_COMMENTS_%
+
+#include "windows.h"
+#include "ios"
+#include "fstream"
+
+%_TYPEDEF_%
+
+// Remove this line if you aren't proxying any functions.
+HMODULE hModule = LoadLibrary(L"%_REAL_DLL_%");
+
+// Remove this function if you aren't proxying any functions.
+VOID DebugToFile(LPCSTR szInput)
+{
+    std::ofstream log("spartacus-proxy-%_PROJECTNAME_%.log", std::ios_base::app | std::ios_base::out);
+    log &lt;&lt; szInput;
+    log &lt;&lt; "\n";
+}
+
+BOOL APIENTRY DllMain(HMODULE hModule, DWORD  ul_reason_for_call, LPVOID lpReserved)
+{
+    switch (ul_reason_for_call)
+    {
+    case DLL_PROCESS_ATTACH:
+    case DLL_THREAD_ATTACH:
+    case DLL_THREAD_DETACH:
+    case DLL_PROCESS_DETACH:
+        break;
+    }
+    return TRUE;
+}
+
+%_FUNCTIONS_%</value>
+  </data>
+  <data name="solution\proxy.rc" xml:space="preserve">
+    <value>// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United Kingdom) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION %_FILEVERSION_MAJOR_%,%_FILEVERSION_MINOR_%,%_FILEVERSION_REVISION_%,%_FILEVERSION_BUILD_%
+ PRODUCTVERSION %_PRODUCTVERSION_MAJOR_%,%_PRODUCTVERSION_MINOR_%,%_PRODUCTVERSION_REVISION_%,%_PRODUCTVERSION_BUILD_%
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "CompanyName", "%_COMPANYNAME_%"
+            VALUE "FileDescription", "%_FILEDESCRIPTION_%"
+            VALUE "FileVersion", "%_FILEVERSION_%"
+            VALUE "InternalName", "%_INTERNALNAME_%"
+            VALUE "LegalCopyright", "%_LEGALCOPYRIGHT_%"
+            VALUE "OriginalFilename", "%_ORIGINALNAME_%"
+            VALUE "ProductName", "%_PRODUCTNAME_%"
+            VALUE "ProductVersion", "%_PRODUCTVERSION_%"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1200
+    END
+END
+
+#endif    // English (United Kingdom) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED</value>
+  </data>
+  <data name="solution\proxy.sln" xml:space="preserve">
+    <value>Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "%_PROJECTNAME_%", "%_PROJECTNAME_%.vcxproj", "{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Debug|x64.ActiveCfg = Debug|x64
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Debug|x64.Build.0 = Debug|x64
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Debug|x86.ActiveCfg = Debug|Win32
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Debug|x86.Build.0 = Debug|Win32
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Release|x64.ActiveCfg = Release|x64
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Release|x64.Build.0 = Release|x64
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Release|x86.ActiveCfg = Release|Win32
+		{6FCED408-75B2-4EF9-9E5F-3EC58B19249B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D766E4B4-286A-400F-AEF0-4FE4441221C5}
+	EndGlobalSection
+EndGlobal</value>
+  </data>
+  <data name="solution\proxy.vcxproj" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&gt;
+  &lt;ItemGroup Label="ProjectConfigurations"&gt;
+    &lt;ProjectConfiguration Include="Debug|Win32"&gt;
+      &lt;Configuration&gt;Debug&lt;/Configuration&gt;
+      &lt;Platform&gt;Win32&lt;/Platform&gt;
+    &lt;/ProjectConfiguration&gt;
+    &lt;ProjectConfiguration Include="Release|Win32"&gt;
+      &lt;Configuration&gt;Release&lt;/Configuration&gt;
+      &lt;Platform&gt;Win32&lt;/Platform&gt;
+    &lt;/ProjectConfiguration&gt;
+    &lt;ProjectConfiguration Include="Debug|x64"&gt;
+      &lt;Configuration&gt;Debug&lt;/Configuration&gt;
+      &lt;Platform&gt;x64&lt;/Platform&gt;
+    &lt;/ProjectConfiguration&gt;
+    &lt;ProjectConfiguration Include="Release|x64"&gt;
+      &lt;Configuration&gt;Release&lt;/Configuration&gt;
+      &lt;Platform&gt;x64&lt;/Platform&gt;
+    &lt;/ProjectConfiguration&gt;
+  &lt;/ItemGroup&gt;
+  &lt;PropertyGroup Label="Globals"&gt;
+    &lt;VCProjectVersion&gt;16.0&lt;/VCProjectVersion&gt;
+    &lt;Keyword&gt;Win32Proj&lt;/Keyword&gt;
+    &lt;ProjectGuid&gt;{6fced408-75b2-4ef9-9e5f-3ec58b19249b}&lt;/ProjectGuid&gt;
+    &lt;RootNamespace&gt;%_PROJECTNAME_%&lt;/RootNamespace&gt;
+    &lt;WindowsTargetPlatformVersion&gt;10.0&lt;/WindowsTargetPlatformVersion&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" /&gt;
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration"&gt;
+    &lt;ConfigurationType&gt;DynamicLibrary&lt;/ConfigurationType&gt;
+    &lt;UseDebugLibraries&gt;true&lt;/UseDebugLibraries&gt;
+    &lt;PlatformToolset&gt;v143&lt;/PlatformToolset&gt;
+    &lt;CharacterSet&gt;Unicode&lt;/CharacterSet&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration"&gt;
+    &lt;ConfigurationType&gt;DynamicLibrary&lt;/ConfigurationType&gt;
+    &lt;UseDebugLibraries&gt;false&lt;/UseDebugLibraries&gt;
+    &lt;PlatformToolset&gt;v143&lt;/PlatformToolset&gt;
+    &lt;WholeProgramOptimization&gt;true&lt;/WholeProgramOptimization&gt;
+    &lt;CharacterSet&gt;Unicode&lt;/CharacterSet&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration"&gt;
+    &lt;ConfigurationType&gt;DynamicLibrary&lt;/ConfigurationType&gt;
+    &lt;UseDebugLibraries&gt;true&lt;/UseDebugLibraries&gt;
+    &lt;PlatformToolset&gt;v143&lt;/PlatformToolset&gt;
+    &lt;CharacterSet&gt;Unicode&lt;/CharacterSet&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration"&gt;
+    &lt;ConfigurationType&gt;DynamicLibrary&lt;/ConfigurationType&gt;
+    &lt;UseDebugLibraries&gt;false&lt;/UseDebugLibraries&gt;
+    &lt;PlatformToolset&gt;v143&lt;/PlatformToolset&gt;
+    &lt;WholeProgramOptimization&gt;true&lt;/WholeProgramOptimization&gt;
+    &lt;CharacterSet&gt;Unicode&lt;/CharacterSet&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" /&gt;
+  &lt;ImportGroup Label="ExtensionSettings"&gt;
+  &lt;/ImportGroup&gt;
+  &lt;ImportGroup Label="Shared"&gt;
+  &lt;/ImportGroup&gt;
+  &lt;ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"&gt;
+    &lt;Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /&gt;
+  &lt;/ImportGroup&gt;
+  &lt;ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"&gt;
+    &lt;Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /&gt;
+  &lt;/ImportGroup&gt;
+  &lt;ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"&gt;
+    &lt;Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /&gt;
+  &lt;/ImportGroup&gt;
+  &lt;ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'"&gt;
+    &lt;Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" /&gt;
+  &lt;/ImportGroup&gt;
+  &lt;PropertyGroup Label="UserMacros" /&gt;
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"&gt;
+    &lt;TargetName&gt;%_PROJECTNAME_%&lt;/TargetName&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'"&gt;
+    &lt;TargetName&gt;%_PROJECTNAME_%&lt;/TargetName&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"&gt;
+    &lt;ClCompile&gt;
+      &lt;WarningLevel&gt;Level3&lt;/WarningLevel&gt;
+      &lt;SDLCheck&gt;true&lt;/SDLCheck&gt;
+      &lt;PreprocessorDefinitions&gt;WIN32;_DEBUG;VERSION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)&lt;/PreprocessorDefinitions&gt;
+      &lt;ConformanceMode&gt;true&lt;/ConformanceMode&gt;
+      &lt;PrecompiledHeader&gt;NotUsing&lt;/PrecompiledHeader&gt;
+      &lt;PrecompiledHeaderFile&gt;pch.h&lt;/PrecompiledHeaderFile&gt;
+    &lt;/ClCompile&gt;
+    &lt;Link&gt;
+      &lt;SubSystem&gt;Windows&lt;/SubSystem&gt;
+      &lt;GenerateDebugInformation&gt;true&lt;/GenerateDebugInformation&gt;
+      &lt;EnableUAC&gt;false&lt;/EnableUAC&gt;
+    &lt;/Link&gt;
+  &lt;/ItemDefinitionGroup&gt;
+  &lt;ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"&gt;
+    &lt;ClCompile&gt;
+      &lt;WarningLevel&gt;Level3&lt;/WarningLevel&gt;
+      &lt;FunctionLevelLinking&gt;true&lt;/FunctionLevelLinking&gt;
+      &lt;IntrinsicFunctions&gt;true&lt;/IntrinsicFunctions&gt;
+      &lt;SDLCheck&gt;true&lt;/SDLCheck&gt;
+      &lt;PreprocessorDefinitions&gt;WIN32;NDEBUG;VERSION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)&lt;/PreprocessorDefinitions&gt;
+      &lt;ConformanceMode&gt;true&lt;/ConformanceMode&gt;
+      &lt;PrecompiledHeader&gt;NotUsing&lt;/PrecompiledHeader&gt;
+      &lt;PrecompiledHeaderFile&gt;pch.h&lt;/PrecompiledHeaderFile&gt;
+    &lt;/ClCompile&gt;
+    &lt;Link&gt;
+      &lt;SubSystem&gt;Windows&lt;/SubSystem&gt;
+      &lt;EnableCOMDATFolding&gt;true&lt;/EnableCOMDATFolding&gt;
+      &lt;OptimizeReferences&gt;true&lt;/OptimizeReferences&gt;
+      &lt;GenerateDebugInformation&gt;true&lt;/GenerateDebugInformation&gt;
+      &lt;EnableUAC&gt;false&lt;/EnableUAC&gt;
+    &lt;/Link&gt;
+  &lt;/ItemDefinitionGroup&gt;
+  &lt;ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"&gt;
+    &lt;ClCompile&gt;
+      &lt;WarningLevel&gt;Level3&lt;/WarningLevel&gt;
+      &lt;SDLCheck&gt;true&lt;/SDLCheck&gt;
+      &lt;PreprocessorDefinitions&gt;_DEBUG;VERSION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)&lt;/PreprocessorDefinitions&gt;
+      &lt;ConformanceMode&gt;true&lt;/ConformanceMode&gt;
+      &lt;PrecompiledHeader&gt;NotUsing&lt;/PrecompiledHeader&gt;
+      &lt;PrecompiledHeaderFile&gt;pch.h&lt;/PrecompiledHeaderFile&gt;
+      &lt;RuntimeLibrary&gt;MultiThreaded&lt;/RuntimeLibrary&gt;
+    &lt;/ClCompile&gt;
+    &lt;Link&gt;
+      &lt;SubSystem&gt;Windows&lt;/SubSystem&gt;
+      &lt;GenerateDebugInformation&gt;true&lt;/GenerateDebugInformation&gt;
+      &lt;EnableUAC&gt;false&lt;/EnableUAC&gt;
+      &lt;ModuleDefinitionFile&gt;%_PROJECTNAME_%.def&lt;/ModuleDefinitionFile&gt;
+    &lt;/Link&gt;
+  &lt;/ItemDefinitionGroup&gt;
+  &lt;ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'"&gt;
+    &lt;ClCompile&gt;
+      &lt;WarningLevel&gt;Level3&lt;/WarningLevel&gt;
+      &lt;FunctionLevelLinking&gt;true&lt;/FunctionLevelLinking&gt;
+      &lt;IntrinsicFunctions&gt;true&lt;/IntrinsicFunctions&gt;
+      &lt;SDLCheck&gt;true&lt;/SDLCheck&gt;
+      &lt;PreprocessorDefinitions&gt;NDEBUG;VERSION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)&lt;/PreprocessorDefinitions&gt;
+      &lt;ConformanceMode&gt;true&lt;/ConformanceMode&gt;
+      &lt;PrecompiledHeader&gt;NotUsing&lt;/PrecompiledHeader&gt;
+      &lt;PrecompiledHeaderFile&gt;pch.h&lt;/PrecompiledHeaderFile&gt;
+      &lt;RuntimeLibrary&gt;MultiThreaded&lt;/RuntimeLibrary&gt;
+    &lt;/ClCompile&gt;
+    &lt;Link&gt;
+      &lt;SubSystem&gt;Windows&lt;/SubSystem&gt;
+      &lt;EnableCOMDATFolding&gt;true&lt;/EnableCOMDATFolding&gt;
+      &lt;OptimizeReferences&gt;true&lt;/OptimizeReferences&gt;
+      &lt;GenerateDebugInformation&gt;true&lt;/GenerateDebugInformation&gt;
+      &lt;EnableUAC&gt;false&lt;/EnableUAC&gt;
+      &lt;ModuleDefinitionFile&gt;%_PROJECTNAME_%.def&lt;/ModuleDefinitionFile&gt;
+    &lt;/Link&gt;
+    &lt;PostBuildEvent&gt;
+      &lt;Command&gt;
+        powershell.exe -c "(Get-ChildItem '$(TargetPath)').LastWriteTime = (Get-ChildItem '%_SOURCEDLL_%').LastWriteTime"
+        powershell.exe -c "(Get-ChildItem '$(TargetPath)').CreationTime = (Get-ChildItem '%_SOURCEDLL_%').CreationTime"
+      &lt;/Command&gt;
+    &lt;/PostBuildEvent&gt;
+  &lt;/ItemDefinitionGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;ClCompile Include="dllmain.cpp" /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;None Include="%_PROJECTNAME_%.def" /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;ClInclude Include="resource.h" /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;ResourceCompile Include="%_PROJECTNAME_%.rc" /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" /&gt;
+  &lt;ImportGroup Label="ExtensionTargets"&gt;
+  &lt;/ImportGroup&gt;
+&lt;/Project&gt;</value>
+  </data>
+  <data name="solution\resource.h" xml:space="preserve">
+    <value>//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by proxy.rc
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        101
+#define _APS_NEXT_COMMAND_VALUE         40001
+#define _APS_NEXT_CONTROL_VALUE         1001
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
+</value>
+  </data>
+</root>
